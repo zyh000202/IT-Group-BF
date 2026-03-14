@@ -1,0 +1,19 @@
+{% extends 'books/base.html' %}
+
+{% block title %}Delete Book{% endblock %}
+
+{% block content %}
+<div class="card border-danger">
+    <div class="card-header bg-danger text-white">
+        Confirm deletion
+    </div>
+    <div class="card-body">
+        <p>Are you sure you want to delete book《{{ book.title }}》？This operation is irreversible。</p>
+        <form method="post">
+            {% csrf_token %}
+            <button type="submit" class="btn btn-danger">Confirm deletion</button>
+            <a href="{% url 'books:book_detail' book.id %}" class="btn btn-secondary">Cancel</a>
+        </form>
+    </div>
+</div>
+{% endblock %}

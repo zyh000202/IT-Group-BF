@@ -1,0 +1,17 @@
+
+
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+main {
+    flex: 1;
+}
+.card-img-top {
+    object-fit: cover;
+}
+.navbar-dark .navbar-nav .nav-link,
+.navbar-dark .navbar-nav .btn.nav-link {
+    color: #ffffff !important;
+}

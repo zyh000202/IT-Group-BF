@@ -5,7 +5,7 @@
 {% block content %}
 <h1 class="mb-4">Book List</h1>
 
-<!-- Search and Filter Forms -->
+<!-- Search and filter form -->
 <div class="row mb-4">
     <div class="col-md-8">
         <form method="get" class="d-flex" role="search">
@@ -16,8 +16,8 @@
     </div>
     <div class="col-md-4">
         <form method="get" id="category-form">
-            <select name="category" class="form-select" onchange="this.form.submit()">
-                <option value="">All categories</option>
+            <select name="category" class="form-select" onchange="this.form.submit()" aria-label="Filter by category">
+                <option value="">All Categories</option>
                 {% for category in categories %}
                     <option value="{{ category.id }}" {% if selected_category == category.id|stringformat:"s" %}selected{% endif %}>{{ category.name }}</option>
                 {% endfor %}
@@ -27,7 +27,7 @@
     </div>
 </div>
 
-<!-- Book Card List -->
+<!-- Book cards -->
 <div class="row">
     {% for book in books %}
         <div class="col-md-4 mb-4">

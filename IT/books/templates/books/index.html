@@ -1,0 +1,17 @@
+{% extends 'books/base.html' %}
+
+{% block title %}Home - Library Management System{% endblock %}
+
+{% block content %}
+<div class="jumbotron bg-light p-5 rounded">
+    <h1 class="display-4">Welcome to Library Management System</h1>
+    <p class="lead">A simple Django-based library application that allows users to borrow and return books, and administrators to manage book information.</p>
+    <hr class="my-4">
+    <p>Currently, the system has <strong>{{ book_count }}</strong> books, with <strong>{{ available_count }}</strong> available for borrowing.</p>
+    <a class="btn btn-primary btn-lg" href="{% url 'books:book_list' %}" role="button">Browse Books</a>
+    {% if not user.is_authenticated %}
+        <a class="btn btn-outline-secondary btn-lg" href="{% url 'login' %}" role="button">Login</a>
+        <a class="btn btn-outline-secondary btn-lg" href="{% url 'books:register' %}" role="button">Register</a>
+    {% endif %}
+</div>
+{% endblock %}

@@ -4,7 +4,13 @@ $(document).ready(function() {
 
     // Get CSRF token from meta tag
     var csrftoken = $('meta[name="csrf-token"]').attr('content');
-    console.log('CSRF Token exists:', !!csrftoken);
+    console.log('CSRF Token from meta:', csrftoken);
+
+    // If meta tag not found, try to get from cookie (fallback)
+    if (!csrftoken) {
+        csrftoken = getCookie('csrftoken');
+        console.log('CSRF Token from cookie:', csrftoken);
+    }
 
     // Borrow button (detail page)
     $('#borrow-btn').on('click', function(e) {
@@ -54,4 +60,20 @@ $(document).ready(function() {
             }
         });
     });
+
+    // Helper function to get CSRF token from cookie
+    function getCookie(name) {
+        var cookieValue = null;
+        if (document.cookie && document.cookie !== '') {
+            var cookies = document.cookie.split(';');
+            for (var i = 0; i < cookies.length; i++) {
+                var cookie = jQuery.trim(cookies[i]);
+                if (cookie.substring(0, name.length + 1) === (name + '=')) {
+                    cookieValue = decodeURIComponent(cookie.substring(name.length + 1));
+                    break;
+                }
+            }
+        }
+        return cookieValue;
+    }
 });

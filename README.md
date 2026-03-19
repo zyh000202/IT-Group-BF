@@ -1,13 +1,13 @@
 # IT Group BF
 
 Library Management System – Coursework Project
-📖 Project Overview
+Project Overview
 This project is a web-based book management system. The system allows registered users to search, borrow and return books, and the administrator can manage the book catalog. The application is built using Django (back end) and Bootstrap 5 (front end) and deployed on Tencent Cloud Windows server.
 
 Deployed Application: http://49.233.254.59:8000
 Code Repository: (https://github.com/zyh000202/IT-Group-BF.git)
 
-Features Implemented (as per coursework requirements)
+✅ Features Implemented (as per coursework requirements)
 Category	Features
 User Authentication	Register, login, logout (Django built-in auth). Access control for protected pages.
 Database Interaction	Models for Book, Category, BorrowRecord. Full CRUD for books (admin only).
@@ -29,7 +29,7 @@ Static Files: WhiteNoise (production)
 
 Deployment: Waitress WSGI server on Windows Server; Tencent Cloud security group configured.
 
-Deployment & Access
+🚀 Deployment & Access
 The application is deployed on a Tencent Cloud Windows Server instance.
 
 Public URL: http://49.233.254.59:8000
@@ -40,7 +40,7 @@ Test User: You may create a new user via the registration page, or use the provi
 
 Note: The site uses HTTP (not HTTPS) for simplicity; all core features work correctly. Browser warnings about "not secure" can be ignored for marking purposes.
 
-Running Tests
+🧪 Running Tests
 Unit tests cover core business logic and view responses. To run the test suite:
 
 bash
@@ -53,7 +53,7 @@ Borrow/return view permissions and responses
 
 AJAX endpoint behavior
 
-Accessibility Improvements (3+ points)
+♿ Accessibility Improvements (3+ points)
 Semantic HTML & Landmarks – <header>, <nav>, <main>, <footer> used correctly.
 
 ARIA Labels – Added to icon-only buttons (navbar toggler, alert close button) for screen readers.
@@ -62,7 +62,7 @@ Color Contrast – Ensured text/background meet WCAG AA (4.5:1). Adjusted Bootst
 
 Keyboard Navigation – All interactive elements focusable and operable.
 
-Sustainability Optimizations
+🌱 Sustainability Optimizations
 Tool Used: Google Lighthouse
 
 Pages Tested: Homepage and Book List page
